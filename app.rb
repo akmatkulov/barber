@@ -72,3 +72,7 @@ end
 get '/about' do
 	erb :about
 end
+
+get '/showusers' do
+	erb :showusers
+end
