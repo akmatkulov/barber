@@ -25,6 +25,14 @@ configure do
 					"barber" TEXT,
 					"color" TEXT
 					)'
+	db.execute 'CREATE TABLE IF NOT EXISTS
+				"Barber"
+				(
+					"id" INTEGER PRIMARY KEY AUTOINCREMENT,
+					"barber_name" TEXT
+
+					)'
+
 end
 
 get '/' do
