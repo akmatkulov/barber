@@ -23,6 +23,11 @@ def get_db
 
 end
 
+before do
+	db = get_db
+	@barber_n = db.execute 'select * from Barber'
+end
+
 # Initial database
 configure do
 
@@ -78,6 +83,8 @@ post '/visit' do
 	db = get_db
 	db.execute 'insert into Users (user_name, user_phone, date_stamp, barber, color)
 							values (?, ?, ?, ?, ?)', [@user_name, @user_phone, @date_time, @barber, @color]
+
+
 
 	@title = "Thank you!"
 	@message = "Dear #{@user_name}, we'll be waiting for you at #{@date_time}. #{@color}."
