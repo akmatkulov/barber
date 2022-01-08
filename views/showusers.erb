@@ -1,9 +1,16 @@
+
+
 <table class="table">
 
-  <tr>
-    <td>aaa</td>
-    <td>bbb</td>
+  <% @results.each do |row| %>
+    <tr>
+      <td><%= row['user_name'] %></td>
+      <td><%= row['user_phone'] %></td>
+      <td><%= row['date_stamp'] %></td>
+      <td><%= row['barber'] %></td>
+      <td><%= row['color'] %></td>
+    </tr>
 
-  </tr>
+  <% end %>
 
 </table>
